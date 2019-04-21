@@ -1,14 +1,9 @@
-html, body {
+html, body, #root {
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
+  font-size: 12px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 40px;
-}
-
-body {
-  
+  flex-direction: column;
 }

@@ -1,0 +1,38 @@
+.upload{
+  &-container {
+    position: relative;
+    height: 20%;
+    width: 100%;
+    .ant-upload {
+      font-size: 100%;
+      background: #39f;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 40px;
+    }
+  }
+  &-content {
+    // height: 100%;
+    flex: 1;
+    flex-basis: 1;
+    display: flex;
+    .left {
+      flex: 1
+    }
+    .right {
+      flex: 2
+    }
+  }
+}
+
+.canvas {
+  &-panel {
+    height: 100%;
+    width: 100%;
+    canvas {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

@@ -63,7 +63,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.scss$/,
+        test: /\.s?css$/,
         use: [
           {
             loader: require.resolve('style-loader')
@@ -81,7 +81,7 @@ module.exports = {
         ]
       },
       {
-        exclude: [/\.(js|jsx|mjs|ts|tsx)$/, /\.html$/, /\.json$/, /\.scss$/],
+        exclude: [/\.(js|jsx|mjs|ts|tsx|html|json|scss|css)$/],
         loader: require.resolve('file-loader'),
         options: {
           name: 'static/media/[name].[ext]'
