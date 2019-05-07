@@ -2,8 +2,7 @@ const eslint = require('eslint')
 const Linter = eslint.Linter
 const SourceCode = eslint.SourceCode
 
-const {appSrc} = require('../config/_paths')
-
+const { appSrc } = require('../config/_paths')
 
 const sourceCode = new SourceCode(appSrc, ast)
 const linter = new Linter()

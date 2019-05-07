@@ -14,7 +14,7 @@ const props = {
   multiple: true,
   accept: 'image/*',
   showUploadList: false,
-  customRequest() { },
+  customRequest() {}
 }
 
 export class UploadPage extends React.Component {
@@ -25,7 +25,9 @@ export class UploadPage extends React.Component {
     base64List: []
   }
   handleOnChange = async (param: UploadChangeParam) => {
-    const originFileList = param.fileList.map((uploadFile) => uploadFile.originFileObj) as File[]
+    const originFileList = param.fileList.map(
+      uploadFile => uploadFile.originFileObj
+    ) as File[]
     resolveSortedBase64List({
       fileList: originFileList
     })
@@ -50,7 +52,7 @@ export class UploadPage extends React.Component {
           <ToolBar />
         </div>
         <div className="upload-content">
-          <div className="left"></div>
+          <div className="left" />
           <div className="right">
             <Canvas setCanvasEl={this.setCanvasEl} />
           </div>

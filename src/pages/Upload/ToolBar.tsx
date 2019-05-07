@@ -16,7 +16,7 @@ export class ToolBar extends React.Component {
           <Option value="horizontal">从左到右</Option>
           <Option value="tilt">斜对齐</Option>
         </Select>
-        <span className="space"></span>
+        <span className="space" />
         <span>元素间距：</span>
         <InputNumber {...InputNumberProps} />
       </>
@@ -34,7 +34,8 @@ const SelectProps: SelectProps = {
 const InputNumberProps: InputNumberProps = {
   defaultValue: 10,
   size: 'small',
-  formatter: (value?: string | number) => `${value} px`.replace(/\B(?=(\d{3})+(?!\d))/g, ','),
+  formatter: (value?: string | number) =>
+    `${value} px`.replace(/\B(?=(\d{3})+(?!\d))/g, ','),
   parser(value: string) {
     value = value.replace(/\s?|(,*)\s*px/g, '')
     const num = parseInt(value)

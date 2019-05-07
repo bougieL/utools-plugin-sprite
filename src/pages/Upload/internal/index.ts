@@ -1,7 +1,13 @@
-export function getBase64(file: File, scale: number = 1): Promise<{
+// import { GrowingPacker } from module('./algorithm')
+import {GrowingPacker} from './algorithm'
+
+export function getBase64(
+  file: File,
+  scale: number = 1
+): Promise<{
   base64: string
-  width: number
-  height: number
+  w: number
+  h: number
 }> {
   return new Promise((resolve: any, reject: any) => {
     const reader = new FileReader()
@@ -21,7 +27,7 @@ export function getBase64(file: File, scale: number = 1): Promise<{
           return
         }
         ctx.drawImage(img, 0, 0, width, height)
-        resolve({ base64: elem.toDataURL('image.jpeg'), width, height })
+        resolve({ base64: elem.toDataURL('image.jpeg'), w: width, h: height })
       }
     }
     reader.onerror = reject
@@ -29,7 +35,7 @@ export function getBase64(file: File, scale: number = 1): Promise<{
 }
 
 export async function resovleBase64List(files: File[]) {
-  const filesBase64 = files.map(async (file) => {
+  const filesBase64 = files.map(async file => {
     return await getBase64(file)
   })
   return await Promise.all(filesBase64)
@@ -37,13 +43,14 @@ export async function resovleBase64List(files: File[]) {
 
 export async function resolveSortedBase64List({
   fileList,
-  type  = 'auto',
+  type = 'auto',
   space = 10
 }: {
-  fileList: File[],
-  type?: 'auto' | 'vertical' | 'horizontal' | 'tilt',
+  fileList: File[]
+  type?: 'auto' | 'vertical' | 'horizontal' | 'tilt'
   space?: number
 }) {
   const base64List = await resovleBase64List(fileList)
-  // console.log(base64List)
+  const output = new GrowingPacker().output(base64List)
+  console.log(output)
 }

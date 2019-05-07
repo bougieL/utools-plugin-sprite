@@ -20,14 +20,11 @@ function exec(cmd) {
 function getHostIP() {
   const interfaces = os.networkInterfaces()
   const overall = []
-  Object.keys(interfaces)
-    .forEach((name) => {
-      const infos = interfaces[name]
-      Array.prototype.push.apply(overall, infos)
-    })
-  const cands = overall
-    .filter((info) =>
-      info.family === 'IPv4' && !info.internal)
+  Object.keys(interfaces).forEach(name => {
+    const infos = interfaces[name]
+    Array.prototype.push.apply(overall, infos)
+  })
+  const cands = overall.filter(info => info.family === 'IPv4' && !info.internal)
   if (cands.length === 0) {
     return undefined
   }

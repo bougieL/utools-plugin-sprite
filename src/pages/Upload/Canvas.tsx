@@ -13,7 +13,7 @@ export class Canvas extends React.Component<IProps> {
   render() {
     return (
       <div className="canvas-panel">
-        <canvas ref={this.refCanvas}></canvas>
+        <canvas ref={this.refCanvas} />
       </div>
     )
   }

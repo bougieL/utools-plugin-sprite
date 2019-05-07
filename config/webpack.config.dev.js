@@ -67,12 +67,14 @@ module.exports = {
         use: [
           {
             loader: require.resolve('style-loader')
-          }, {
+          },
+          {
             loader: require.resolve('css-loader'),
             options: {
               sourceMap: true
             }
-          }, {
+          },
+          {
             loader: require.resolve('sass-loader'),
             options: {
               sourceMap: true
@@ -97,7 +99,9 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new FriendlyErrorsWebpackPlugin({
       compilationSuccessInfo: {
-        messages: [`You application is running here http://${getHostIP()}:3003`],
+        messages: [
+          `You application is running here http://${getHostIP()}:3003`
+        ],
         notes: ['Hot module replacement is enabled']
       }
     })
