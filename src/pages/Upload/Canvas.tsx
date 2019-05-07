@@ -1,34 +1,18 @@
 import * as React from 'react'
 
-interface IState {
-  propsCanvas: object
+interface IProps {
+  setCanvasEl: (el: HTMLCanvasElement) => void
 }
 
-export class Canvas extends React.Component<{}, IState> {
+export class Canvas extends React.Component<IProps> {
   refCanvas: React.RefObject<HTMLCanvasElement> = React.createRef()
-  refPanel: React.RefObject<HTMLDivElement> = React.createRef()
-  state = {
-    propsCanvas: {}
-  }
-  componentDidMount () {
-    this.setCanvasSize()
-    window.addEventListener('resize', this.setCanvasSize)
-  }
-  componentWillUnmount() {
-    // window.removeEventListener('resize', this.calcCanvasSize)
-  }
-  drawBackImg() {
-
-  }
-  setCanvasSize = () => {
-    const elPanel = this.refPanel.current as HTMLDivElement
-    const elCanvas = this.refCanvas.current as HTMLCanvasElement
-    elCanvas.width = elPanel.offsetWidth
-    elCanvas.height = elPanel.offsetHeight
+  componentDidMount() {
+    const { setCanvasEl } = this.props
+    setCanvasEl(this.refCanvas.current as HTMLCanvasElement)
   }
   render() {
     return (
-      <div className="canvas-panel" ref={this.refPanel}>
+      <div className="canvas-panel">
         <canvas ref={this.refCanvas}></canvas>
       </div>
     )

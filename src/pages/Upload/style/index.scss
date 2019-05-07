@@ -12,16 +12,25 @@
       font-size: 40px;
     }
   }
+  &-tool-bar {
+    padding: 6px 10px;
+    display: flex;
+    align-items: center;
+    .space {
+      width: 20px;
+      display: inline-block;
+    }
+  }
   &-content {
-    // height: 100%;
     flex: 1;
-    flex-basis: 1;
     display: flex;
     .left {
-      flex: 1
+      flex: 1;
+      overflow: auto;
     }
     .right {
-      flex: 2
+      flex: 2;
+      overflow: hidden;
     }
   }
 }
@@ -30,6 +39,7 @@
   &-panel {
     height: 100%;
     width: 100%;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABS2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDAgNzkuMTYwNDUxLCAyMDE3LzA1LzA2LTAxOjA4OjIxICAgICAgICAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIi8+CiA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgo8P3hwYWNrZXQgZW5kPSJyIj8+LUNEtwAAAC5JREFUOI1j/P//PwM+cPbsWbwKmPDqJgKMGjAYDGAhFM/GxsaMNHXBqAGDwQAAxHsKhcy7q8AAAAAASUVORK5CYII=);
     canvas {
       height: 100%;
       width: 100%;

@@ -97,14 +97,14 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new FriendlyErrorsWebpackPlugin({
       compilationSuccessInfo: {
-        messages: [`You application is running here http://${getHostIP()}:3001`],
+        messages: [`You application is running here http://${getHostIP()}:3003`],
         notes: ['Hot module replacement is enabled']
-      },
+      }
     })
   ],
   devServer: {
     host: '0.0.0.0',
-    port: 3001,
+    port: 3003,
     disableHostCheck: false,
     hot: true,
     contentBase: paths.appPublic,
